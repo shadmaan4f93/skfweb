@@ -1,0 +1,31 @@
+{% extends "registration/base.html" %}
+{% block content %}
+<h1>Login</h1>
+<form method="post">
+	{% csrf_token %}
+	<i class="fa fa-user 2x"></i>
+	{{form.username}}
+	<br>
+	<br>
+	<i class="fa fa-key"></i>
+	{{form.password}}
+	<br>
+	<br>
+	<a href="{% url 'password_reset' %}" class="fg-link">Forgorte password</a>
+	<br>
+	<span>{{ form.non_field_errors }}</span>
+	<br>
+	<a href="{% url 'home' %}" class="btn btn-info">Skip</a>
+	<Button type="submit" class="btn btn-info">Login</button>
+</form>​​
+<hr>
+<span>Login with</span><br><br>
+<a href="{% url 'social:begin' 'google-oauth2' %}" class="social-fb"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> 
+<a href="{% url 'social:begin' 'google-oauth2' %}" class="social-google"><i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i></a>
+
+<br><br>
+<hr>
+<span>Or Signup</span><br><br>
+<a href="{% url 'signup' %}" class="btn btn-info">Signup</a>
+{% endblock %}
+		

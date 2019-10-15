@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soap:Body>
+<saveUpdateCustomer xmlns="urn:gravograph.web.service">
+<inputDoc xmlns="">
+<CustomerEntity>
+<customerID/>
+<BillingAddress>
+<customerName>AndyCoTest4</customerName>
+<firstName>BONNIE</firstName>
+<lastName>WONG</lastName>
+<phoneType>BUSI</phoneType>
+<Phone>216-486-6167</Phone>
+<addressLine1>676 ALPHA DRIVE</addressLine1>
+<addressLine2/>
+<city>HIGHLAND HTS</city>
+<state>OH</state>
+<postalCode>44143</postalCode>
+<country>US</country>
+</BillingAddress>
+<taxExemptCode>S</taxExemptCode>
+<taxCertificateNo/>
+</CustomerEntity>
+<ContactEntity>
+<contactID/>
+<firstName>BONNIE</firstName>
+<lastName>WONG</lastName>
+<phoneType>BUSI</phoneType>
+<phoneNo>216-486-6167</phoneNo>
+<email>BWaNG@GOOCHANDHOUSEGO.COM</email>
+</ContactEntity>
+</inputDoc>
+</saveUpdateCustomer>
+</soap:Body>
+</soap:Envelope>

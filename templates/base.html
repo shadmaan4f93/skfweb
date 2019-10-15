@@ -1,0 +1,165 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>{% block title %}{{page.title}}{% endblock title %}</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+  <!-- Fonts -->
+  <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+  <link href="{% static "css/animate.css" %}" rel="stylesheet" />
+  <!-- Squad theme CSS -->
+  <link href="{% static "css/style.css" %}" rel="stylesheet">
+  <link href="{% static "color/default.css" %}" rel="stylesheet">
+  <link href="{% static "css/bot.css" %}" rel="stylesheet">
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5d1321a4f67b5200124612b5&product='inline-share-buttons' async='async'></script>
+{% block css %}{% endblock %}
+
+  <style>  
+.toast {
+  position: fixed;
+  background: #050505;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fafafa;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  z-index: 1111; }
+</style>
+{{ form.media }}
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="load"></div>
+  </div>
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="/">
+          <h1>{{page.company}}</h1>
+        </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">Team</a></li>
+          <li><a href="#service">Service</a></li>
+           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          {% if not request.user.is_authenticated %}
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'signup' %}">SIGNUP</a></li>
+                {% else %}
+                <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+        	{% endif %}
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- Section: intro -->
+  {% block info %}
+  <section id="intro" class="intro">
+
+    <div class="slogan">
+      <h2>WELCOME TO <span class="text_color">{{page.company}}</span> </h2>
+      <h4>{{page.specialize}}</h4>
+    </div>
+    <div class="page-scroll">
+      <a href="#about" class="btn btn-circle">
+				<i class="fa fa-angle-double-down animated"></i>
+			</a><br>
+      <div class="search">
+        <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+        <span id="listener"></span>
+        <input type="text" id="search" name="search" placeholder="Search">
+        <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+  <!-- /Section: intro -->
+{% comment %} <div class="chatbot">
+  <i class="fa fa-comment fa-4x" aria-hidden="true"></i>
+</div> {% endcomment %}
+<section class="chatbox js-chatbox">
+  <div class="chatbox__header">
+    <h3 class="chatbox__header-cta-text"><span class="chatbox__header-cta-icon"><i
+                  class="fa fa-comments fa-2x"></i></span>Let's chat</h3>
+    <button class="js-chatbox-toggle chatbox__header-cta-btn u-btn"><i class="fa fa-chevron-up"></i></button>
+  </div>
+  <!-- End of .chatbox__header -->
+  <div class="js-chatbox-display chatbox__display">
+
+  </div>
+  <!-- End of .chatbox__display -->
+  <form class="js-chatbox-form chatbox__form">
+    {% csrf_token %}
+    <input type="text" class="js-chatbox-input chatbox__form-input" placeholder="Type your message..." required>
+    <button class="chatbox__form-submit u-btn"><i class="fa fa-location-arrow fa-2x"></i></button>
+  </form>
+  <!-- End of .chatbox__form -->
+</section>
+<!-- End of .chatbox -->
+<div class="toasts">
+  {% if messages %} {% for message in messages %}
+  <div class="toast {% if message.tags %}toast-{{ message.tags }}{% endif %}">{{ message }}</div>
+  {% endfor %} {% endif %}
+</div>
+{% block content %}
+
+{% endblock %}
+
+  <!-- Section: about -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="wow shake" data-wow-delay="0.4s">
+            <div class="page-scroll marginbot-30">
+              <a href="#intro" id="totop" class="btn btn-circle">
+							<i class="fa fa-angle-double-up animated"></i>
+						</a>
+            </div>
+          </div>
+          <p>&copy;SKFWEB. All rights reserved.</p>
+          <div class="credits">
+            Designed by & develop <a href="https://skfweb.herokuapp.com/"> Shadmaan Khurshid</a>
+          </div>
+        </div>
+      </div>
+    </div>     
+  </footer>
+  <!-- Core JavaScript Files -->
+  <script src="{% static "js/jquery.min.js" %}"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/jquery.easing.min.js" %}"></script>
+  <script src="{% static "js/jquery.scrollTo.js" %}"></script>
+  <script src="{% static "js/wow.min.js" %}"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="{% static "js/bot.js" %}"></script>
+  <script src="{% static "js/custom.js" %}"></script>
+  <script src="{% static "js/recoginizer.js" %}"></script>
+  <script src="{% static "contactform/contactform.js" %}"></script>
+  <script>
+    $(document).ready(function(){
+            $(".toast").delay(5000).fadeOut()
+        });
+</script>
+</body>
+</html>

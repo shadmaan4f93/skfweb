@@ -1,0 +1,28 @@
+{% load static i18n %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>{% block title %}Login{% endblock title %}</title>
+	<link rel="icon" type="image/png" href="{% static "images/icons/favicon.ico" %}">
+  <!-- Fonts -->
+  <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static "css/login.css" %}">
+ 
+{% block css %}{% endblock %}
+
+</head>
+<body>
+	<div class="container h-100">
+  		<div class="row h-100 justify-content-center align-items-center">
+		  	<div class="shadow-lg p-3 mb-5 bg-white rounded form-div">
+			  {% block content %}{% endblock %}
+			</div>
+  		</div>
+	</div>
+	<!-- Core JavaScript Files -->
+  <script src="{% static "js/jquery.min.js" %}"></script>
+  <script src="{% static "js/bootstrap.min.js" %}"></script>
+</body>
+</html>

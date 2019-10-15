@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<section id="about" class="home-section text-center">
+    <div class="heading-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="wow bounceInDown" data-wow-delay="0.4s">
+              <div class="section-heading">
+                <h2>TEAM MEMBERS</h2>
+                  <div class="page-scroll">
+                    <a href="#service" class="btn btn-circle1">
+                      <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+          <hr class="marginbot-50">
+        </div>
+      </div>
+      <div class="row">
+        {% for member in members %}
+        <div class="col-md-3">
+          <div class="wow bounceInUp" data-wow-delay="0.2s">
+            <div class="team boxed-grey">
+              <div class="inner">
+              <a href="{% url 'devdetail' member.id %}">
+                <h5>{{member.name}}</h5>
+                <p class="subtitle">{{member.role}}</p>
+                <div class="avatar">
+                  {% if member.image %}
+                  <img src="/media/{{member.image}}" alt="" class="img-responsive img-circle" />
+                  {% else %}
+                    <img src="{% static "Images/team/1.jpg" %}" alt="" class="img-responsive img-circle" />
+                  {% endif %}
+                </div>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor%}
+      </div>
+    </div>
+  </section>
+  <!-- /Section: about -->
+
+
+  <!-- Section: services -->
+  <section id="service" class="home-section text-center bg-gray">
+    <div class="heading-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="wow bounceInDown" data-wow-delay="0.4s">
+              <div class="section-heading">
+                <h2>Our Services</h2>
+                <div class="page-scroll">
+                    <a href="#portfolio" class="btn btn-circle1">
+                      <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+          <hr class="marginbot-50">
+        </div>
+      </div>
+      <div class="row">
+      {% for service in services %}
+        <div class="col-md-4">
+          <div class="wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="service-box">
+              <div class="service-icon">
+               {% if service.logo %}
+               <img src="/media/{{service.logo}}" alt="" />
+                {% else %}
+                  <img src="{% static "Images/icons/service-icon-1.png" %}" alt="" />
+                {% endif %}
+              </div>
+              <div class="service-desc">
+                <h5>{{service.name}}</h5>
+                <p>{{service.descriptions}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor%}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Section: services -->
+<section id="portfolio" class="home-section text-center">
+    <div class="heading-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="wow bounceInDown" data-wow-delay="0.4s">
+              <div class="section-heading">
+                <h2>PORTFOLIO</h2>
+                  <div class="page-scroll">
+                    <a href="#contact" class="btn btn-circle1">
+                      <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+          <hr class="marginbot-50">
+        </div>
+      </div>
+      <div class="row">
+      {% for project in projects %}
+        <div class="col-md-4">
+          <div class="wow fadeInLeft" data-wow-delay="0.2s">
+          <a href="{{project.weblink}}">
+            <div class="service-box">
+              <div class="service-icon">
+                {% if project.logo %}
+               <img src="/media/{{project.logo}}" alt="" width="200" height="50" />
+                {% else %}
+                  <img src="{% static "Images/icons/service-icon-1.png" %}"  alt="" width="200" height="50"/>
+                {% endif %}
+              </div>
+              <div class="service-desc">
+                <h5>{{project.name}}</h5>
+                <p>{{project.descriptions}}</p>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      {% endfor%}
+      </div>
+    </div>
+  </section>
+  <!-- Section: contact -->
+  <section id="contact" class="home-section text-center bg-gray">
+    <div class="heading-contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="wow bounceInDown" data-wow-delay="0.4s">
+              <div class="section-heading">
+                <h2>Get in touch</h2>
+                <div class="page-scroll">
+                    <a href="#footer" class="btn btn-circle1">
+                      <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+          <hr class="marginbot-50">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="boxed-grey">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form id="contact-form" action="" method="post" role="form" class="contactForm">
+			 	      {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                      <div class="validation"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">Message</label>
+                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="widget-contact">
+            <h5>Main Office</h5>
+            <address>
+				      <strong>{{page.company}}</strong><br>
+				        {{page.address}}<br>
+				        <abbr title="Phone">Phone: </abbr> {{page.phone}}
+				    </address>
+            <address>
+				      <strong>Email: </strong>
+				      <a href="mailto:#">{{page.email}}</a>
+				    </address>
+            <address>
+				      <strong>We're on social networks</strong><br>
+              <div class="sharethis-inline-share-buttons"></div>
+                <ul class="company-social">
+                    <li class="social-facebook"><a href="{{page.facebook_profile}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li class="social-twitter"><a href="{{page.twitter_profile}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li class="social-dribble"><a href="{{page.linkedin_profile}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="social-google"><a href="{{page.google_profile}}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+				    </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Section: contact -->
+
+{% endblock %}

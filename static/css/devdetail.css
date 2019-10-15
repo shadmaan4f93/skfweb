@@ -1,0 +1,112 @@
+.textleft {
+    text-align: left !important;
+}
+
+.carousel {
+    padding: 50px;
+}
+.carousel-indicators li {
+    background-color: #000000;
+}
+.carousel-control.right {
+    background-image: linear-gradient(to right,rgb(255, 255, 255) 0,rgb(103, 176, 209) 100%);
+}
+.carousel-control.left {
+    background-image: linear-gradient(to right,rgb(103, 176, 209) 0,rgb(255, 255, 255) 100%);
+}
+
+.panel-default>.panel-heading{
+    background-color: #67b0d1;
+    color: #fff;
+}
+.textsizelargebold {
+    font-size: 60px;
+    font-weight: 1000;
+}
+
+.textsizemediumbold {
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.textsizesmallbold {
+    font-size: 20px;
+    font-weight: 800;
+}
+.nameheader {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.spantextbold {
+    font-weight: bold !important;
+}
+
+.descriptionheader {
+    font-size: 20px;
+    font-weight: 200;
+}
+.titleclass {
+    color: #fff;
+    background-color: #67b0d1;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+}
+.image-border {
+    height: 350px;
+    width: 350px;
+    border: 20px solid rgba(0, 0, 0, 0.07);
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.buttonclas {
+    border: 1px solid #67b0d1;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 0px 6px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 4px 0px;
+    display: inline-block;
+}
+.downloadbtn{
+    background-image: linear-gradient(to right, #000000,#64afb7) !important;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+}
+
+.pannels{
+    background-image: linear-gradient(to right, #000000,#64afb7) !important;
+    margin: 20px;
+    padding: 10px;
+}

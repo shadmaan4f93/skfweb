@@ -1,0 +1,50 @@
+.form-div {
+    text-align: left;
+    color: gray;
+    display: block;
+}
+.form-div h1{
+    text-align: center;
+}
+.form-div span{
+    text-align: center;
+}
+
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 300px;
+    color: gray;
+    border-color: gray;
+    margin: 5px;
+}
+
+.fg-link {
+    float: right;
+    color: gray;
+    text-decoration: none;
+}
+i{
+    color: gray
+}
+
+.social-fb{
+    margin-right: 20px;
+}
+.social-google{
+    margin-right: 20px;
+}
+.social-fb i{
+    color: rgb(79, 76, 236) !important
+}
+.social-google i{ 
+    color: rgb(255, 5, 5) !important
+}
+
+
+ul li {
+    color: rgb(255, 0, 0) !important;
+    display: block;
+    list-style: none;
+}

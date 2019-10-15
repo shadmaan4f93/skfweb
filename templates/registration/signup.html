@@ -1,0 +1,18 @@
+{% extends "registration/base.html" %}
+{% block content %}
+<h1>Signup</h1>
+<form method="post">
+	{% csrf_token %}
+	{% for field in form %}
+		<label>{{ field.label_tag }}</label>
+		{{ field }}<br><br>
+		{% for error in field.errors %}
+		<p style="color: red">{{ error }}</p>
+		{% endfor %}
+	{% endfor %}
+	<Button type="submit" class="btn btn-info">Register</i></button>
+</form>​​
+<hr>
+<span>Back to login</span><br><br>
+<a href="{% url 'login' %}"><i class="fa fa-sign-in fa-2x"></i></a>
+{% endblock %}
