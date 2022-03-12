@@ -26,7 +26,7 @@ murmurhash==1.0.2
 nltk==3.4.3
 numpy==1.16.4
 oauthlib==3.0.1
-Pillow==6.0.0
+Pillow==9.0.1
 Pint==0.9
 plac==0.9.6
 playsound==1.2.2
